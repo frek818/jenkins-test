@@ -2,7 +2,7 @@ pipeline  {
     agent: none
     stages {
         stage("Build") {
-            step {
+            steps {
                 sh "echo 'Hello'"
             }
         }
