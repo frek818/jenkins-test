@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'ls'
+                sh 'cat /etc/mysql/my.cnf'
                 sh 'npm --version'
             }
         }
