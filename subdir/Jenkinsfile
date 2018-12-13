@@ -2,7 +2,6 @@ pipeline {
     agent { docker { image 'node:6.3' } }
     stages {
         stage('build') {
-            directory 
             steps {
                 dir('subdir') {
                     sh 'ls'
