@@ -13,12 +13,14 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('test') {
             when {
                 changeset "subdir/*"
             }
             steps {
-                sh 'cat me_there'
+                dir('subdir') {
+                    sh 'cat me_there'
+                }
             }
         }
     }
