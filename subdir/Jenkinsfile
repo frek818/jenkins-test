@@ -2,6 +2,9 @@ pipeline {
     agent { docker { image 'node:6.3' } }
     stages {
         stage('build') {
+            when {
+                changeset "subdir/*"
+            }
             steps {
                 dir('subdir') {
                     sh 'ls'
@@ -10,7 +13,10 @@ pipeline {
                 }
             }
         }
-        stage('next stage') {
+        stage('Test') {
+            when {
+                changeset "subdir/*"
+            }
             steps {
                 sh 'cat me_there'
             }
