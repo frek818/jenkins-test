@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             directory 
             steps {
-                dir('subdir') {``
+                dir('subdir') {
                     sh 'ls'
                     sh 'cat /etc/mysql/my.cnf'
                     sh 'echo "hi" > me_there'
