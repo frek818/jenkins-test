@@ -2,11 +2,13 @@ pipeline {
     agent { docker { image 'node:6.3' } }
     stages {
         stage('build') {
+            directory 
             steps {
-                sh 'ls'
-                sh 'cat /etc/mysql/my.cnf'
-                sh 'npm --version'
-                sh 'echo "hi" > me_there'
+                dir('subdir') {``
+                    sh 'ls'
+                    sh 'cat /etc/mysql/my.cnf'
+                    sh 'echo "hi" > me_there'
+                }
             }
         }
         stage('next stage') {
