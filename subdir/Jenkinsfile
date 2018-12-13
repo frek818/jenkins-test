@@ -6,7 +6,7 @@ pipeline {
                 sh 'ls'
                 sh 'cat /etc/mysql/my.cnf'
                 sh 'npm --version'
-                sh 'echo "hi" > me_there"
+                sh 'echo "hi" > me_there'
             }
         }
         stage('next stage') {
